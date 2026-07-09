@@ -1,9 +1,9 @@
-# 🤖 AI Resume Analyzer
+#  AI Resume Analyzer
 
 An AI-powered web application built with Flask and PostgreSQL that analyzes PDF resumes against a target job role using the Groq API. The application extracts resume text, generates structured AI feedback, identifies missing skills, suggests interview questions, creates a learning roadmap, and recommends project ideas.
 
 
-## 🚀 Features
+##  Features
 
 - User Registration & Login
 - Secure Password Hashing
@@ -21,7 +21,7 @@ An AI-powered web application built with Flask and PostgreSQL that analyzes PDF 
 - Responsive Bootstrap Dashboard
 
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 ### Backend
 - Python
@@ -47,7 +47,7 @@ An AI-powered web application built with Flask and PostgreSQL that analyzes PDF 
 - Werkzeug
 
 
-## 📂 Project Structure
+##  Project Structure
 
 AI-Resume-Analyzer/
 │
@@ -65,7 +65,7 @@ AI-Resume-Analyzer/
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/AI-Resume-Analyzer.git
@@ -85,13 +85,7 @@ python run.py
 
 ---
 
-## 📸 Screenshots
-
-(Add screenshots after deployment.)
-
----
-
-## 🎯 Future Improvements
+##  Future Improvements
 
 - Resume score
 - ATS compatibility score
@@ -102,12 +96,12 @@ python run.py
 
 ---
 
-## 👩‍💻 Author
+##  Author
 
 **Sonia**
 
 Built as a portfolio project using Flask, PostgreSQL and Gorq AI
 
-## 📄 License
+##  License
 
 This project is for educational and portfolio purposes.
