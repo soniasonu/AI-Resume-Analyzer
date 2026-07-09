@@ -1,0 +1,138 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="mb-4">
+    <h2 class="fw-bold">
+        Welcome back, {{ current_user.username }} 👋
+    </h2>
+
+    <p class="text-muted">
+        Manage your resumes and AI analyses from your dashboard.
+    </p>
+</div>
+
+<div class="row mb-4">
+
+    <div class="col-md-6">
+        <div class="card shadow border-0 bg-primary text-white">
+            <div class="card-body">
+                <h5>📄 Total Resumes</h5>
+                <h1 class="display-5">{{ resumes|length }}</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card shadow border-0 bg-success text-white">
+            <div class="card-body">
+                <h5>🤖 Total Analyses</h5>
+                <h1 class="display-5">{{ resumes|length }}</h1>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="card shadow">
+
+    <div class="card-header bg-white">
+        <h5 class="mb-0">📂 My Uploaded Resumes</h5>
+    </div>
+
+    <div class="card-body">
+
+        {% if resumes %}
+
+        <table class="table table-hover align-middle">
+
+            <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>Job Role</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+            {% for resume in resumes %}
+
+                <tr>
+
+                    <td>{{ resume.filename }}</td>
+
+                    <td>{{ resume.job_role }}</td>
+
+                    <td>
+                        {{ resume.uploaded_at.strftime("%d %b %Y, %I:%M %p") }}
+                    </td>
+
+                    <td>
+
+                        {% if resume.analysis %}
+
+                        <a href="{{ url_for('resume.view_analysis', analysis_id=resume.analysis.id) }}"
+                           class="btn btn-primary btn-sm">
+                             View
+                        </a>
+
+                        {% else %}
+
+                        <span class="text-muted me-2">
+                            No Analysis
+                        </span>
+
+                        {% endif %}
+
+                        <form action="{{ url_for('resume.delete_resume', resume_id=resume.id) }}"
+                              method="POST"
+                              style="display:inline;">
+
+                            <button type="submit"
+                                    class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Delete this resume?')">
+
+                                 Delete
+
+                            </button>
+
+                        </form>
+
+                    </td>
+
+                </tr>
+
+            {% endfor %}
+
+            </tbody>
+
+        </table>
+
+        {% else %}
+
+        <div class="text-center py-5">
+
+            <h3>📄 No resumes uploaded yet</h3>
+
+            <p class="text-muted">
+                Upload your first resume to get started.
+            </p>
+
+            <a href="{{ url_for('resume.upload_resume') }}"
+               class="btn btn-primary">
+
+                Upload Resume
+
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

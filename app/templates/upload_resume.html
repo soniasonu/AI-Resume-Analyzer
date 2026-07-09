@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h2>Upload Resume</h2>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <div class="mb-3">
+            <label class="form-label">Select Job Role</label>
+
+            <select class="form-control" name="job_role" required>
+                <option value="">-- Select Role --</option>
+                <option>Software Engineer</option>
+                <option>Python Developer</option>
+                <option>Frontend Developer</option>
+                <option>Backend Developer</option>
+                <option>Full Stack Developer</option>
+                <option>Data Scientist</option>
+                <option>Machine Learning Engineer</option>
+            </select>
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">Upload Resume (PDF)</label>
+
+            <input
+                type="file"
+                class="form-control"
+                name="resume"
+                accept=".pdf"
+                required>
+
+        </div>
+
+        <button class="btn btn-primary">
+            Analyze Resume
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

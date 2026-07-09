@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="mb-4">
+
+    <h2 class="fw-bold">
+        🤖 AI Resume Analysis
+    </h2>
+
+    <p class="text-muted">
+        Here is your personalized resume feedback.
+    </p>
+
+</div>
+
+<!-- Summary -->
+
+<div class="card shadow mb-4">
+
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">📄 Summary</h5>
+    </div>
+
+    <div class="card-body">
+        {{ analysis.summary }}
+    </div>
+
+</div>
+
+<!-- Missing Skills -->
+
+<div class="card shadow mb-4">
+
+    <div class="card-header bg-warning">
+        <h5 class="mb-0">🛠 Missing Skills</h5>
+    </div>
+
+    <div class="card-body">
+
+        {% for skill in analysis.missing_skills %}
+
+            <span class="badge bg-secondary me-2 mb-2 p-2">
+                {{ skill }}
+            </span>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+<!-- Interview Questions -->
+
+<div class="card shadow mb-4">
+
+    <div class="card-header bg-success text-white">
+        <h5 class="mb-0">❓ Interview Questions</h5>
+    </div>
+
+    <div class="card-body">
+
+        <ol>
+
+            {% for question in analysis.interview_questions %}
+
+                <li class="mb-2">
+                    {{ question }}
+                </li>
+
+            {% endfor %}
+
+        </ol>
+
+    </div>
+
+</div>
+
+<!-- Learning Roadmap -->
+
+<div class="card shadow mb-4">
+
+    <div class="card-header bg-info text-white">
+        <h5 class="mb-0">📚 Learning Roadmap</h5>
+    </div>
+
+    <div class="card-body">
+
+        <ul class="list-group">
+
+            {% for item in analysis.learning_roadmap %}
+
+                <li class="list-group-item">
+
+                    {{ item }}
+
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div>
+
+<!-- Project Ideas -->
+
+<div class="card shadow mb-4">
+
+    <div class="card-header bg-dark text-white">
+        <h5 class="mb-0">💡 Project Ideas</h5>
+    </div>
+
+    <div class="card-body">
+
+        <ul class="list-group">
+
+            {% for project in analysis.project_ideas %}
+
+                <li class="list-group-item">
+
+                    {{ project }}
+
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+</div>
+
+<a href="{{ url_for('main.dashboard') }}"
+   class="btn btn-primary">
+
+    ← Back to Dashboard
+
+</a>
+
+{% endblock %}

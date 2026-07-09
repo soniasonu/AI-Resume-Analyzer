@@ -2,19 +2,87 @@
 
 {% block content %}
 
-<div class="text-center">
+<div class="text-center py-5">
 
-    <h1 class="display-4">
-        AI Resume Analyzer
+    <h1 class="display-4 fw-bold">
+        🤖 AI Resume Analyzer
     </h1>
 
-    <p class="lead">
-        Upload your resume and receive AI-powered feedback.
+    <p class="lead mt-3">
+        Upload your resume and get AI-powered feedback in seconds.
     </p>
 
-    <a href="/register" class="btn btn-primary btn-lg">
-        Get Started
-    </a>
+    <div class="mt-4">
+
+        <a href="/upload" class="btn btn-primary btn-lg me-2">
+            Upload Resume
+        </a>
+
+        <a href="/dashboard" class="btn btn-outline-dark btn-lg">
+            Dashboard
+        </a>
+
+    </div>
+
+</div>
+
+<hr class="my-5">
+
+<div class="row text-center">
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h3>📄</h3>
+
+                <h5>Upload Resume</h5>
+
+                <p>Upload your PDF resume securely.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h3>🤖</h3>
+
+                <h5>AI Analysis</h5>
+
+                <p>Receive detailed feedback powered by Groq AI.</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card shadow-sm h-100">
+
+            <div class="card-body">
+
+                <h3>🚀</h3>
+
+                <h5>Improve Resume</h5>
+
+                <p>Learn missing skills and prepare for interviews.</p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
