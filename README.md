@@ -1,9 +1,29 @@
-#  AI Resume Analyzer
+# AI Resume Analyzer
 
-An AI-powered web application built with Flask and PostgreSQL that analyzes PDF resumes against a target job role using the Groq API. The application extracts resume text, generates structured AI feedback, identifies missing skills, suggests interview questions, creates a learning roadmap, and recommends project ideas.
+An AI-powered web app built using Flask and PostgreSQL that analyzes PDF resumes based on a target job role, using the Groq API. It extracts text from the resume, generates AI feedback, finds missing skills, gives interview questions, suggests a learning roadmap, and recommends project ideas.
+
+## What It Does
+
+You upload your resume as a PDF and enter the job role you're targeting. The app reads the text from your resume and sends it to an AI model (Llama 3.3 70B through Groq) along with the job role. It then gives back a summary of your resume, the skills you're missing for that role, some interview questions you might get asked, a roadmap of what to learn, and a few project ideas you could build. It also saves your past analyses so you can check them again later.
+
+## Why I Built It
+
+I was applying for jobs myself and using different resume tools to check my resume. I wanted to understand how these AI-based analysis tools actually work under the hood, instead of just using one. So I built my own version — one that takes a resume and a target job role, and uses an LLM to generate feedback like missing skills, interview questions, a learning roadmap, and project ideas.
+
+This was as much about the build as the result — going from "upload a PDF" to "get structured AI feedback back" touches a lot of real-world skills: file handling, prompt design, API integration, auth, and a database, all in one project.
+
+## What I Learned
+
+- How to get an AI model to return proper structured output that I could actually use in the app, instead of just plain text
+- How to extract text from PDFs properly, since not every resume format extracts cleanly
+- How to build login and registration from scratch using Flask-Login, and hash passwords properly
+- How to handle database changes using Flask-Migrate instead of manually changing tables every time
+- How to organize a Flask project properly (models, routes, services) instead of writing everything in one file
+- How to actually use a real AI API in a project, not just test it in a notebook — handling errors, slow responses, etc.
 
 
-##  Features
+
+## Features
 
 - User Registration & Login
 - Secure Password Hashing
@@ -20,72 +40,45 @@ An AI-powered web application built with Flask and PostgreSQL that analyzes PDF 
 - PostgreSQL Database
 - Responsive Bootstrap Dashboard
 
+## Tech Stack
 
-##  Tech Stack
+**Backend:** Python, Flask, SQLAlchemy, Flask-Login, Flask-Migrate
+**Database:** PostgreSQL
+**Frontend:** HTML, Bootstrap 5, Jinja2
+**AI:** Groq API, Llama 3.3 70B Versatile
+**Libraries:** PyMuPDF, Werkzeug
 
-### Backend
-- Python
-- Flask
-- SQLAlchemy
-- Flask-Login
-- Flask-Migrate
+## Project Structure
 
-### Database
-- PostgreSQL
-
-### Frontend
-- HTML
-- Bootstrap 5
-- Jinja2
-
-### AI
-- Groq API
-- Llama 3.3 70B Versatile
-
-### Libraries
-- PyMuPDF
-- Werkzeug
-
-
-##  Project Structure
-
+```
 AI-Resume-Analyzer/
-│
 ├── app/
-│ ├── models/
-│ ├── routes/
-│ ├── services/
-│ ├── templates/
-│
-├── migrations/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── templates/
+│   └── migrations/
 ├── uploads/
 ├── config.py
 ├── run.py
-├── requirements.txt
+└── requirements.txt
+```
 
----
-
-##  Installation
+## Installation
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/AI-Resume-Analyzer.git
-
 cd AI-Resume-Analyzer
 
 python -m venv venv
-
 venv\Scripts\activate
 
 pip install -r requirements.txt
-
 flask db upgrade
-
 python run.py
 ```
 
----
-
-##  Future Improvements
+## Future Improvements
 
 - Resume score
 - ATS compatibility score
@@ -94,14 +87,7 @@ python run.py
 - Download PDF report
 - Admin dashboard
 
----
-
-##  Author
+## Author
 
 **Sonia**
-
-Built as a portfolio project using Flask, PostgreSQL and Gorq AI
-
-##  License
-
-This project is for educational and portfolio purposes.
+Built this as a portfolio project using Flask, PostgreSQL, and Groq AI.
