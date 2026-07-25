@@ -87,7 +87,3 @@ python run.py
 - Download PDF report
 - Admin dashboard
 
-## Author
-
-**Sonia**
-Built this as a portfolio project using Flask, PostgreSQL, and Groq AI.
