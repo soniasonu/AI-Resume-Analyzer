@@ -69,7 +69,7 @@ AI-Resume-Analyzer/
 ```bash
 git clone https://github.com/YOUR_USERNAME/AI-Resume-Analyzer.git
 cd AI-Resume-Analyzer
-
+ 
 python -m venv venv
 venv\Scripts\activate
 
