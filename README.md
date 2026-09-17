@@ -12,7 +12,7 @@ I was applying for jobs myself and using different resume tools to check my resu
 
 This was as much about the build as the result — going from "upload a PDF" to "get structured AI feedback back" touches a lot of real-world skills: file handling, prompt design, API integration, auth, and a database, all in one project.
 
-## What I Learned
+## What I Learned  
 
 - How to get an AI model to return proper structured output that I could actually use in the app, instead of just plain text
 - How to extract text from PDFs properly, since not every resume format extracts cleanly
