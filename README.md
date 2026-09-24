@@ -5,7 +5,7 @@ An AI-powered web app built using Flask and PostgreSQL that analyzes PDF resumes
 ## What It Does
 
 You upload your resume as a PDF and enter the job role you're targeting. The app reads the text from your resume and sends it to an AI model (Llama 3.3 70B through Groq) along with the job role. It then gives back a summary of your resume, the skills you're missing for that role, some interview questions you might get asked, a roadmap of what to learn, and a few project ideas you could build. It also saves your past analyses so you can check them again later.
-
+  
 ## Why I Built It
 
 I was applying for jobs myself and using different resume tools to check my resume. I wanted to understand how these AI-based analysis tools actually work under the hood, instead of just using one. So I built my own version — one that takes a resume and a target job role, and uses an LLM to generate feedback like missing skills, interview questions, a learning roadmap, and project ideas.
